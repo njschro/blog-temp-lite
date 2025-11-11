@@ -1,5 +1,8 @@
 ---
 import { map } from "astro:schema";
+import '../styles/global.css';
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 
 const pageTitle = "About Me";
 
@@ -15,6 +18,10 @@ const skills = ["html", "css", "js", "astro", "data-viz"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "crimson";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <html lang="en">
@@ -26,11 +33,20 @@ const goal = 3;
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
+        <Navigation />
 
 		<h1>{pageTitle}</h1>
+        <style define:vars={{skillColor, fontWeight, textCase}}>
+            h1 {
+                color: purple;
+                font-size: 4rem;
+            }
+            .skill {
+                color: var(--skillColor);
+                font-weight: var(--fontWeight);
+                text-transform: var(--textCase);
+            }
+        </style>
 		<h2>and my new astro site</h2>
         <p>working on this...</p>
         <p>some facts about me</p>
@@ -43,10 +59,11 @@ const goal = 3;
         </ul>
         <p>my skills are:</p>
         <ul>
-            {skills.map((skill) => <li>{skill}</li>)}
+            {skills.map((skill) => <li class="skill">{skill}</li>)}
         </ul>
         {happy && <p>I'm happy to be learning.</p> }
         {finished && <p>I finished this segment.</p> }
         {goal === 3 ? <p>My goal is to be finished in 3 days</p> : <p>My goal is not 3 days.</p> }
 	</body>
+    <Footer />
 </html>

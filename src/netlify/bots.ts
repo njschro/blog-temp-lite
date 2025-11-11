@@ -1,5 +1,5 @@
 import { Config } from "@netlify/edge-functions";
-import agents from "../../../agents.json" with { type: "json" };
+import agents from "../../agents.json" with { type: "json" };
 
 export default async (request: Request) => {
 
