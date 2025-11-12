@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: My Fourth Post
 author: Astro Learner
 description: "Shows up on its own after adding import.meta.glob()"
