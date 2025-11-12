@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: My Third Blog Post
+title: My Fourth Post
 author: Astro Learner
-description: "I had some challenges, but asking in the community really helped!"
+description: "Shows up on its own after adding import.meta.glob()"
 image:
     url: "https://docs.astro.build/assets/rays.webp"
     alt: "The Astro logo on a dark background with rainbow rays."
